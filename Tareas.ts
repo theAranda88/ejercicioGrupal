@@ -24,3 +24,14 @@ const obtenerEstadoTartea = (tarea: Tarea): string =>           //funcion flecha
 
 const nuevaTarea: Tarea =  { id: 6, nombre: 'Tarea 6', completada: false }; 
 const tareasActualizadas = [...tareas, nuevaTarea];
+
+
+
+// angi = mostrar resultados
+// alvaro = •	Tip: Dentro de .map(), usa una estructura if para verificar si el id coincide y, en caso positivo, cambia el estado de completada.
+// •	Mostrar el estado de la tarea usando el operador ternario
+// •	Crea una función flecha llamada obtenerEstadoTarea que reciba una tarea como parámetro.
+// •	Dentro de esta función, usa un operador ternario para devolver un texto que indique el estado de la tarea: "Completada" si la tarea está completa o "Pendiente" si no lo está.
+// Juan = •	Agregar una nueva tarea a la lista utilizando el spread operator
+// •	Define una nueva tarea como un objeto que contenga las propiedades id, nombre, y completada (ejemplo: { id: 4, nombre: "Ver videos de tutoriales", completada: false }).
+// •	Usa el spread operator (...) para crear una nueva lista de tareas que incluya todas las tareas anteriores más la nueva tarea, sin modificar el array original.
