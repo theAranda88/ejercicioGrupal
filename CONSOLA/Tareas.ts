@@ -12,15 +12,51 @@ let tareas: Tarea[] = [
     { id: 5, nombre: 'Tarea 5', completada: false },
 ];
 
-const cambiarEstadotarea = (tareas: Tarea[], id: number): Tarea[] => {
+
+// Función para cambiar el estado de completada de una tarea específica
+const cambiarEstadoTarea = (tareas: Tarea[], id: number): Tarea[] => {
     return tareas.map(tarea =>                                                //map con el q recorro el array tareas
         tarea.id === id? {...tarea, completada:!tarea.completada } : tarea    //verificamos por el condicional ternario si tarea.id es igual a id
     );                                                                        //si es asi creamos copia del array cambiandole el valor a completada sino devuelve tarea sin modificacion
 }
 
-const obtenerEstadoTartea = (tarea: Tarea): string =>           //funcion flecha
+// Función flecha para obtener el estado de la tarea usando operador ternario
+const obtenerEstadoTarea = (tarea: Tarea): string =>           //funcion flecha
     tarea.completada? 'Completada' : 'Pendiente';               //usamos operador ternario para evaluar si es true o false y decir si es
                                                                 //completada o pendiente
+
+// Ejemplo de uso: cambiar estado de una tarea y mostrar el estado actualizado
+tareas = cambiarEstadoTarea(tareas, 3); // Cambia el estado de la tarea con id 3
+console.log(tareas.map(t => `${t.nombre}: ${obtenerEstadoTarea(t)}`));
+
+
+//------------------------------AYUDA-------------------------------------
+// Función para agregar una nueva tarea usando el spread operator
+const agregarTarea = (tareas: Tarea[], nuevaTarea: Tarea): Tarea[] => {
+    return [...tareas, nuevaTarea];
+};
+
+// Función para mostrar las tareas con su estado en la consola
+const mostrarTareas = (tareas: Tarea[]): void => {
+    tareas.map(tarea => {
+        console.log(`${tarea.nombre}: ${obtenerEstadoTarea(tarea)}`);
+    });
+};
+
+// Agregar una nueva tarea y mostrar el resultado
+const nuevaTarea: Tarea = { id: 6, nombre: "Ver videos de tutoriales", completada: false };
+tareas = agregarTarea(tareas, nuevaTarea);
+
+console.log("Lista de tareas después de agregar una nueva:");
+mostrarTareas(tareas);
+
+// Cambiar el estado de una tarea y mostrar el resultado actualizado
+tareas = cambiarEstadoTarea(tareas, 3); // Cambia el estado de la tarea con id 3
+
+console.log("Lista de tareas después de cambiar el estado de una tarea:");
+mostrarTareas(tareas);
+
+
 
 
 // angi = mostrar resultados
