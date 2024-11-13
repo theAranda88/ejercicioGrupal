@@ -1,51 +1,103 @@
+/* Fondo de la página */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    background-image: url('https://img.freepik.com/vector-premium/fondo-onda-estilo-minimalista_278222-571.jpg?w=360');
+    background-size: cover; /* Escala la imagen para cubrir toda la pantalla */
+    background-position: center; 
+    background-repeat: no-repeat; /* Evita que la imagen se repita */    
+    font-family: 'Arial', sans-serif;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
     margin: 0;
 }
 
-h1 {
-    color: #4a4a4a;
+/* Contenedor principal */
+.container {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #ffffffdd;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
+
+/* Título */
+h1 {
+    color: #4c075e;
+    font-family:fantasy;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
 
 #task-list {
     width: 100%;
-    max-width: 600px;
     margin-top: 20px;
 }
+
 
 .task-item {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-    margin: 5px 0;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    background: #eed9d98f;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
 }
 
+.task-item:hover {
+    transform: translateY(-2px);
+}
+
+/* Nombre de la tarea */
 .task-name {
     font-size: 1.1em;
+    color: #333;
 }
 
+/* Estilo para las tareas completadas */
 .completed {
     text-decoration: line-through;
     color: #888;
 }
 
-.status-button, #add-task-btn {
-    padding: 5px 10px;
+/* Botón principal para agregar tarea */
+#add-task-btn {
+    padding: 12px 20px;
+    font-size: 1em;
     color: #fff;
-    background-color: #4a90e2;
+    background-color: #66a6ff;
     border: none;
-    border-radius: 3px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
 }
 
-.status-button:hover, #add-task-btn:hover {
-    background-color: #357abd;
+#add-task-btn:hover {
+    background-color: #7c1462;
+    transform: scale(1.05);
+}
+
+/* Botón de estado */
+.status-button {
+    padding: 8px 16px;
+    color: #fff;
+    background-color: #6907698f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0.9em;
+}
+
+.status-button:hover {
+    background-color: #56c7cf85;
 }
